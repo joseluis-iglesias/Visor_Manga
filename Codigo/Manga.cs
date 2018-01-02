@@ -12,8 +12,11 @@ namespace Manga
         static WebBrowser Navegador = new WebBrowser();
         static String Ruta = "Home";
         static String navegar = "https://www.tumangaonline.com/";
-
-        public static void Main() { }
+        [STAThread]
+        public static void Main() {
+            Application.EnableVisualStyles();
+            Application.Run(new Form1());
+        }
 
         /// <summary>
         /// Punto de entrada principal para la aplicación.
