@@ -32,6 +32,7 @@ namespace Manga
             try
             {
                 Manga.CargarPagina();
+                
             }
             catch (Exception ex)
             {

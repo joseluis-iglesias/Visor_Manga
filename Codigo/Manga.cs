@@ -21,7 +21,7 @@ namespace Manga
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
-        public static void CargarPagina(String nuevaRuta = null)
+        public static void Carga(String nuevaRuta = null)
         {
             if (nuevaRuta == null)
                 Navegador.Navigate(navegar + Ruta);
@@ -29,13 +29,14 @@ namespace Manga
                 Navegador.Navigate(navegar + nuevaRuta);
         }
 
-        void Navegador_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        public static void CargarPagina()
         {
             try
             {
+                Carga();
                 var Cadena = Navegador.DocumentText.ToString();
                 Cadena = ExtraerLogin(Cadena);
-                CargarPagina(Cadena);
+                Carga(Cadena);
                 Cadena = Navegador.DocumentText.ToString();
                 EscribirArchivoTexto("texto.txt", Cadena);
                 Navegador.Dispose();
@@ -49,6 +50,7 @@ namespace Manga
         private static String ExtraerLogin(string Contenido)
         {
             String subStrMan = Contenido.Substring(Contenido.IndexOf("<ng-include ng-hide"), Contenido.IndexOf("<ng-include ng-show=\"visor\"") - Contenido.IndexOf("<ng-include ng-hide"));
+            subStrMan = subStrMan.Substring(subStrMan.IndexOf("src=")+4, subStrMan.IndexOf("\'") - subStrMan.IndexOf("src"));
             return subStrMan;
         }
 
