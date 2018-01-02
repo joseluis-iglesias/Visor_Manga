@@ -1,0 +1,10 @@
+C:\Users\Jose Luis\Documents\GitHub\Visor_Manga\Codigo\bin\Debug\Manga.exe.config
+C:\Users\Jose Luis\Documents\GitHub\Visor_Manga\Codigo\bin\Debug\Manga.exe
+C:\Users\Jose Luis\Documents\GitHub\Visor_Manga\Codigo\bin\Debug\Manga.pdb
+C:\Users\Jose Luis\Documents\GitHub\Visor_Manga\Codigo\obj\Debug\Manga.csprojResolveAssemblyReference.cache
+C:\Users\Jose Luis\Documents\GitHub\Visor_Manga\Codigo\obj\Debug\Manga.Form1.resources
+C:\Users\Jose Luis\Documents\GitHub\Visor_Manga\Codigo\obj\Debug\Manga.Properties.Resources.resources
+C:\Users\Jose Luis\Documents\GitHub\Visor_Manga\Codigo\obj\Debug\Manga.csproj.GenerateResource.Cache
+C:\Users\Jose Luis\Documents\GitHub\Visor_Manga\Codigo\obj\Debug\Manga.csproj.CoreCompileInputs.cache
+C:\Users\Jose Luis\Documents\GitHub\Visor_Manga\Codigo\obj\Debug\Manga.exe
+C:\Users\Jose Luis\Documents\GitHub\Visor_Manga\Codigo\obj\Debug\Manga.pdb
