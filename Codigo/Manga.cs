@@ -24,9 +24,25 @@ namespace Manga
         public static void Carga(String nuevaRuta = null)
         {
             if (nuevaRuta == null)
+            {
                 Navegador.Navigate(navegar + Ruta);
+                Navegador.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(Navegador_DocumentCompleted);
+            }
             else
+            {
                 Navegador.Navigate(navegar + nuevaRuta);
+                Navegador.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(Navegador_DocumentCompleted);
+            }
+        }
+
+        private static void Navegador_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            var Cadena = ((WebBrowser)sender).DocumentText.ToString();
+            Cadena = ExtraerLogin(Cadena);
+            Carga(Cadena);
+            Cadena = Navegador.DocumentText.ToString();
+            EscribirArchivoTexto("texto.txt", Cadena);
+            Navegador.Dispose();
         }
 
         public static void CargarPagina()
@@ -34,12 +50,6 @@ namespace Manga
             try
             {
                 Carga();
-                var Cadena = Navegador.DocumentText.ToString();
-                Cadena = ExtraerLogin(Cadena);
-                Carga(Cadena);
-                Cadena = Navegador.DocumentText.ToString();
-                EscribirArchivoTexto("texto.txt", Cadena);
-                Navegador.Dispose();
             }
             catch (Exception ex)
             {
